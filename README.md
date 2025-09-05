@@ -1,59 +1,77 @@
-# DummyjsonApp
+# Prueba Técnica - Aplicación de Productos con Angular y DummyJSON
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.15.
+Esta es una aplicación web SPA (Single Page Application) desarrollada en Angular como parte de una prueba técnica. La aplicación implementa un sistema de autenticación de usuarios y un panel de control (dashboard) para la gestión completa (CRUD) de productos, consumiendo la API de simulación **DummyJSON**.
 
-## Development server
+## ✨ Características Principales
 
-To start a local development server, run:
+* **Login de Usuario:** Formulario reactivo con validaciones en tiempo real.
+* **Autenticación con JWT:** Flujo de autenticación completo usando tokens (`accessToken` y `refreshToken`).
+* **Interceptor HTTP (`AuthInterceptor`):** Añade automáticamente el token de autorización a las peticiones protegidas y maneja la lógica de refresco del token en caso de expiración (error 401).
+* **Rutas Protegidas (`AuthGuard`):** El dashboard es una ruta privada a la que solo se puede acceder después de iniciar sesión.
+* **Dashboard de Productos:** Panel de control para visualizar, crear, editar y eliminar productos.
+* **CRUD Completo:**
+    * **Crear:** Abre un modal para añadir un nuevo producto.
+    * **Leer:** Muestra los productos en una tabla paginada de PrimeNG.
+    * **Actualizar:** Permite editar un producto existente en el mismo modal.
+    * **Eliminar:** Pide confirmación antes de eliminar un producto.
+* **Arquitectura Moderna:**
+    * Uso exclusivo de **Standalone Components**.
+    * Carga perezosa (`Lazy Loading`) para el módulo del Dashboard.
+    * Estrategia de detección de cambios `OnPush` y uso del pipe `async` para un rendimiento óptimo.
+* **Pruebas Unitarias:** Cobertura de pruebas para los servicios y componentes más críticos de la aplicación usando Jasmine y Karma.
 
-```bash
-ng serve
-```
+## 🛠️ Tecnologías Utilizadas
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+* **Angular 19+**
+* **TypeScript**
+* **RxJS** para el manejo de la asincronía.
+* **PrimeNG** como librería de componentes UI (Tabla, Modal, Botones, etc.).
+* **PrimeFlex** para el layout y sistema de rejilla (grid).
+* **Jasmine y Karma** para las pruebas unitarias.
 
-## Code scaffolding
+## 🚀 Instalación y Ejecución
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Sigue estos pasos para levantar el proyecto en tu entorno local.
 
-```bash
-ng generate component component-name
-```
+### Prerrequisitos
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Asegúrate de tener instalado:
+* [Node.js](https://nodejs.org/) (versión 18.x o superior recomendada).
+* [Angular CLI](https://angular.io/cli) (versión 19.x o superior recomendada).
 
-```bash
-ng generate --help
-```
+### Pasos
 
-## Building
+1.  **Clonar el repositorio:**
+    ```bash
+    git clone <URL_DEL_REPOSITORIO>
+    ```
 
-To build the project run:
+2.  **Navegar a la carpeta del proyecto:**
+    ```bash
+    cd nombre-del-proyecto
+    ```
 
-```bash
-ng build
-```
+3.  **Instalar dependencias:**
+    ```bash
+    npm install
+    ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+4.  **Iniciar el servidor de desarrollo:**
+    ```bash
+    ng serve -o
+    ```
+    La aplicación se compilará y se abrirá automáticamente en tu navegador en la dirección `http://localhost:4200/`.
 
-## Running unit tests
+## ✅ Ejecutar Pruebas
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+Para ejecutar las pruebas unitarias y ver el reporte de cobertura, utiliza el siguiente comando:
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+## 🔑 Credenciales de Prueba
 
-For end-to-end (e2e) testing, run:
+Para iniciar sesión en la aplicación, puedes utilizar el siguiente usuario proporcionado por DummyJSON:
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+* **Usuario:** `emilys`
+* **Contraseña:** `emilyspass`
