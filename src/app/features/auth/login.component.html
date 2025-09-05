@@ -1,0 +1,33 @@
+<div class="login-container">
+    <h2>Login</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div class="p-field">
+            <label for="username">Usuario</label>
+            <input id="username" pInputText formControlName="username" placeholder="Ingrese su correo" />
+
+            <small class="p-error"
+                *ngIf="(submitted || loginForm.get('username')?.touched) && loginForm.get('username')?.hasError('required')">
+                El correo es obligatorio
+            </small>
+        </div>
+
+        <div class="p-field">
+            <label for="password">Contraseña</label>
+            <input id="password" pPassword formControlName="password" placeholder="Ingrese su contraseña"
+                [feedback]="false" />
+
+            <small class="p-error"
+                *ngIf="(submitted || loginForm.get('password')?.touched) && loginForm.get('password')?.hasError('required')">
+                La contraseña es obligatoria
+            </small>
+        </div>
+
+        <button pButton type="submit" label="Iniciar sesión" [disabled]="loginForm.invalid"></button>
+    </form>
+</div>
+
+<!-- {
+usuario de prueba:
+  "username": "emilys",
+  "password": "emilyspass"
+} -->

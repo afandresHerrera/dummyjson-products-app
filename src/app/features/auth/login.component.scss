@@ -1,0 +1,31 @@
+.login-container {
+    max-width: 400px;
+    margin: 4rem auto;
+    padding: 2rem;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+
+    h2 {
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .p-field {
+        margin-bottom: 1.2rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    button {
+        width: 100%;
+        cursor: pointer;
+
+    }
+}
+
+.p-error {
+    margin-top: 4px;
+    color: #f44336 !important;
+    font-size: 0.85rem;
+}

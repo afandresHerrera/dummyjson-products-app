@@ -1,0 +1,32 @@
+.p-error {
+  color: #f44336 !important;
+  font-size: 0.85rem;
+}
+
+:host ::ng-deep {
+
+  .formgrid.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 1rem;
+  }
+
+  .field.col-12 {
+    grid-column: span 2;
+  }
+
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  p-inputnumber {
+    width: 100%;
+  }
+
+  .p-error {
+    margin-top: 0.25rem;
+    font-size: 0.875rem;
+  }
+}
